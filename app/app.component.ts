@@ -5,33 +5,23 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'], 
   template: `
     <div class="app">
-      <button (click)="handleClick()">
-        Change Name
+      <button (click)="handleClick(username.value)">
+        Get Value!
       </button>
-      <!-- One way data binding with listening for changes -->
+      
       <input 
         type="text"
-        [ngModel]="name"
-        (ngModelChange)="handleChange($event)"
+        #username
       >
-      <!-- Two way data binding -->
-      <input 
-        type="text"
-        [(ngModel)]="name"
-      >
-      <div>{{ name }}</div>
+     
     </div>  
   `
 })
 export class AppComponent {
   name: string = 'Luka';
 
-  handleClick() {
-    this.name = "Todd"
-  }
-
-  handleChange(value: string) {
-    this.name = value;
+  handleClick(value: string) {
+    console.log(value);
   }
   
 }
