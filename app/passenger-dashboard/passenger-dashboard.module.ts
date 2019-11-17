@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PassengerDashobardComponent } from './containers/passenger-dashboard/passenger-dashboard.component';
 
+// Why are we declarating and exporting ??
 @NgModule ({
     declarations: [
         PassengerDashobardComponent,
