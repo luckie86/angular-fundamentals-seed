@@ -7,6 +7,9 @@ import { PassengerDashobardComponent } from './containers/passenger-dashboard/pa
 import { PassengerCountComponent } from '../passenger-dashboard/components/passenger-count/passenger-count.component';
 import { PassengerDetailComponent } from '../passenger-dashboard/components/passenger-detail/passenger-detail.component';
 
+// service
+import { PassengerDashboardService } from '../passenger-dashboard/passenger-dashboard.service';
+
 // Why are we declarating and exporting ??
 @NgModule ({
     declarations: [
@@ -20,6 +23,9 @@ import { PassengerDetailComponent } from '../passenger-dashboard/components/pass
     exports: [
         PassengerDashobardComponent,
     ],
+    providers: [
+        PassengerDashboardService,
+    ]
 })
 
 export class PassengerDashboardModule {
