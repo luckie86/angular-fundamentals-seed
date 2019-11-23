@@ -18,7 +18,13 @@ import { PassengerDashboardService } from '../passenger-dashboard/passenger-dash
 
 // Why are we declarating and exporting ??
 const routes: Routes = [
-    { path: 'passengers', component: PassengerDashobardComponent }
+    { 
+        path: 'passengers',
+        children: [
+            { path: '', component: PassengerDashobardComponent },
+            { path: ':id', component: PassengerViewerComponent }
+        ]
+    }
 ];
 @NgModule ({
     declarations: [
