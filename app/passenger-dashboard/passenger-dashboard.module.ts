@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 
 // container
 import { PassengerDashobardComponent } from './containers/passenger-dashboard/passenger-dashboard.component';
@@ -16,6 +17,9 @@ import { PassengerFormComponent } from '../passenger-dashboard/components/passen
 import { PassengerDashboardService } from '../passenger-dashboard/passenger-dashboard.service';
 
 // Why are we declarating and exporting ??
+const routes: Routes = [
+    { path: 'passengers', component: PassengerDashobardComponent }
+];
 @NgModule ({
     declarations: [
         PassengerDashobardComponent,
@@ -29,6 +33,7 @@ import { PassengerDashboardService } from '../passenger-dashboard/passenger-dash
         CommonModule,
         HttpModule,
         FormsModule,
+        RouterModule.forChild(routes),
     ],
     exports: [
         PassengerViewerComponent,
