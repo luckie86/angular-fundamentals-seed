@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
     template: `
 
         <div>
-            Not Found!
+            Not Found, <a routerLink="/"> go home </a>
         </div>
 
     `
