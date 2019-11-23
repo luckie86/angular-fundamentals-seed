@@ -14,16 +14,47 @@ import { Passenger } from '../../models/passenger.inteface';
                     name="fullname"
                     [ngModel]="detail?.fullname">    
             </div>
-                {{ form.value | json }}
-
             <div>
-            Passenger Id:
-            <input
-                type="number"
-                name="id"
-                [ngModel]="detail?.id"
-            >    
+                Passenger Id:
+                <input
+                    type="number"
+                    name="id"
+                    [ngModel]="detail?.id"
+                >    
             </div>
+                <label>
+                    <input
+                        type="radio"
+                        [value]="true"
+                        name="checkedIn"
+                        [ngModel]="detail?.checkedIn"
+                        (ngModelChange)="toggleCheckIn($event)"
+                    >
+                    Yes
+                </label>
+                <label>
+                    <input
+                        type="radio"
+                        [value]="false"
+                        name="checkedIn"
+                        [ngModel]="detail?.checkedIn"
+                        (ngModelChange)="toggleCheckIn($event)"
+                    >
+                    No
+                </label>
+            <div>
+                {{ form.value | json }}
+            </div>
+
+            <div *ngIf="form.value.checkedIn">
+                Check in date:
+                <input
+                    type="number"
+                    name="checkInDate"
+                    [ngModel]="detail?.checkInDate"
+                >
+            </div>
+
         </form>
     `
 }) 
@@ -31,5 +62,12 @@ import { Passenger } from '../../models/passenger.inteface';
 export class PassengerFormComponent {
     @Input()
     detail: Passenger;
+
+    toggleCheckIn(checkedIn: boolean) {
+        if (checkedIn) {
+            this.detail.checkInDate = Date.now();
+        }
+    }
+
 } 
     
