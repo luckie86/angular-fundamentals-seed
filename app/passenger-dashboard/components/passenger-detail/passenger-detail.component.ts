@@ -27,10 +27,6 @@ import { Passenger } from '../../models/passenger.inteface';
                 Check in date: 
                 {{ detail.checkInDate ? (detail.checkInDate | date: 'd.MMMM y' | uppercase) : 'Not Checked In'}}
             </div>
-            <!-- safe navigation operator -->
-            <div class="childern">
-                Children: {{ detail.children?.length || 0}}
-            </div>
             <button
                 (click)="toggleEdit()"    
             >
