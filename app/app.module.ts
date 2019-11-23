@@ -23,7 +23,7 @@ const routes: Routes = [
     // angular modules
     BrowserModule,
     CommonModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, { useHash: true }),
     // custom modules
     PassengerDashboardModule,
   ],
